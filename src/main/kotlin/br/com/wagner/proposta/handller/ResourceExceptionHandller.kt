@@ -31,7 +31,7 @@ class ResourceExceptionHandller {
 
     @ExceptionHandler(ExceptionGenericValidated::class)
     fun campoUnico(e: ExceptionGenericValidated, request: HttpServletRequest): ResponseEntity<Any> {
-        val status = HttpStatus.BAD_REQUEST
+        val status = HttpStatus.UNPROCESSABLE_ENTITY
         val error = ValidationError(Instant.now(), status.value(), "Validation", message = e.message!!, path = request.requestURI)
 
         return  ResponseEntity.status(status).body(error)
