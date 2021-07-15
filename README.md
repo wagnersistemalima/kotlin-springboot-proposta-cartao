@@ -30,3 +30,6 @@ Api de um sistema para receber proposta de cartão de credito de clientes, esta 
 * Objetivo: Criamos o fluxo de geração de proposta, porém nosso cliente solicitou uma alteração que consiste em adicionar uma nova validação.
 Entretanto, não podemos permitir a existência de mais de uma proposta para o mesmo solicitante, ou seja, para o mesmo CNPJ ou CPF.
 * Não podemos permitir a existencia de emails já cadastrados
+
+* Devemos retornar o status code 422, quando o solicitante já requisitou uma proposta.
+* Permitir a criação de uma proposta, caso o solicitante não tenha nenhuma outra.
