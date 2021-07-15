@@ -25,6 +25,20 @@ Api de um sistema para receber proposta de cartão de credito de clientes, esta 
 ## Criação de uma nova proposta
 * Objetivo:  Realizar a criação de uma proposta, durante o processo de criação da proposta deve ser checado restrições ao solicitante da proposta.
 
+## Necessidades
+* O documento necessário deve ser o CPF/CNPJ
+* email
+* nome
+* endereço
+* salário
+
+## Restrições
+* documento do solicitante deve ser obrigatório e válido
+* email não pode ser vazio, nulo ou inválido
+* nome não pode ser vazio ou nulo
+* endereço não pode ser vazio ou nulo
+* salário bruto não pode ser vazio, nulo ou negativo
+
 ## Não pode haver mais de uma proposta para o mesmo solicitante
 
 * Objetivo: Criamos o fluxo de geração de proposta, porém nosso cliente solicitou uma alteração que consiste em adicionar uma nova validação.
