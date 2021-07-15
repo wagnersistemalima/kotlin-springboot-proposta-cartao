@@ -1,0 +1,13 @@
+spring:
+  profiles:
+    active: ${PROFILE:test}
+  application:
+    name: proposta
+  jpa:
+    open-in-view: false
+
+server:
+  port: 8080
+
+
+
