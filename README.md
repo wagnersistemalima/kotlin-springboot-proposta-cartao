@@ -7,6 +7,18 @@ Api de um sistema para receber proposta de cartão de credito de clientes, esta 
 * Gerenciador de dependência: Gradlle
 * Java 11
 
+## Implementação utilizando as ferramentas do ecossistema Spring com Kotlin 
+
+* Spring Web: Crie aplicativos da web, incluindo RESTful, usando Spring MVC. Usa Apache Tomcat como o contêiner integrado padrão.
+
+* Bean Validation: é uma especificação que permite validar objetos com facilidade em diferentes camadas da aplicação. A vantagem de usar Bean Validation é que as restrições ficam inseridas nas classes de modelo.
+
+* Banco de dados H2: banco de dados em memoria, para testes
+
+* Ferramenta Postman: Para testar as requisições e criar um ambiente de produção
+
+* Spring Data JPA : biblioteca padrão de persistência de dados no java, baseado no mapeamento objeto relacional
+
 ## Porque Kotlin
 * Com o conhecimento da linguagem Kotlin, é possivel desenvolver aplicações mobile, backend e web
 * Kotlin é multiplataforma
