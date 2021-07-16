@@ -20,6 +20,8 @@ class Proposta(
     val endereco: Endereco,
 
     val salario: BigDecimal
-)
+){
+    var status: String? = null
+}
 
 

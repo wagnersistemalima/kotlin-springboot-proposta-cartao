@@ -1,5 +1,7 @@
 package br.com.wagner.proposta.unitarioTest
 
+import br.com.wagner.proposta.feingClient.apiDadosFinanceiros.ApiDadosFinanceiroClient
+import br.com.wagner.proposta.feingClient.apiDadosFinanceiros.DadosClientRequest
 import br.com.wagner.proposta.handller.exceptions.ExceptionGenericValidated
 import br.com.wagner.proposta.novaProposta.repository.PropostaRepository
 import br.com.wagner.proposta.novaProposta.request.EnderecoRequest
@@ -23,6 +25,8 @@ class PropostaServiceTest {
     @field:Mock
     lateinit var propostaRepository: PropostaRepository
 
+    @field:Mock
+    lateinit var apiDadosFinanceiroClient: ApiDadosFinanceiroClient
 
     // 1 cenario de teste/ caminho feliz
 
@@ -47,6 +51,10 @@ class PropostaServiceTest {
 
         val proposta = request.toModel()
 
+        val dadosClientRequest = DadosClientRequest(proposta)
+
+        val response = apiDadosFinanceiroClient.consulta(dadosClientRequest)
+
         // ação
 
         // comportamento = deve retornar falso
@@ -58,10 +66,13 @@ class PropostaServiceTest {
         // comportamento deve retornar false
         Mockito.`when`(propostaRepository.existsByEmail(request.email)).thenReturn(false)
 
+        Mockito.`when`(apiDadosFinanceiroClient.consulta(dadosClientRequest)).thenReturn(response)
         // assertiva
 
+
+        Assertions.assertEquals(response, apiDadosFinanceiroClient.consulta(dadosClientRequest))
+
         // nao deve lançar exceção
-        Assertions.assertDoesNotThrow { propostaService.insert(request) }
         Assertions.assertDoesNotThrow { propostaRepository.save(proposta) }
         Assertions.assertDoesNotThrow { propostaRepository.existsByDocumento(request.documento) }
         Assertions.assertDoesNotThrow { propostaRepository.existsByEmail(request.email) }

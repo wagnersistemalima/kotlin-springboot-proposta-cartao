@@ -16,6 +16,7 @@ repositories {
 	mavenCentral()
 }
 
+extra["springCloudVersion"] = "Hoxton.SR11"
 
 dependencies {
 
@@ -27,7 +28,15 @@ dependencies {
 
 	implementation("org.springframework.boot:spring-boot-starter-validation")
 
+	implementation("org.springframework.cloud:spring-cloud-starter-openfeign")
+
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
+}
+
+dependencyManagement {
+	imports {
+		mavenBom("org.springframework.cloud:spring-cloud-dependencies:${property("springCloudVersion")}")
+	}
 }
 
 tasks.withType<KotlinCompile> {
