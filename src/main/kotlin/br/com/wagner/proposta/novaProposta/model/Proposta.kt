@@ -1,14 +1,11 @@
 package br.com.wagner.proposta.novaProposta.model
 
+import org.springframework.data.annotation.Id
+import org.springframework.data.mongodb.core.mapping.Document
 import java.math.BigDecimal
 import java.util.*
-import javax.persistence.Embedded
-import javax.persistence.Entity
-import javax.persistence.Id
-import javax.persistence.Table
 
-@Entity
-@Table(name = "tb_proposta")
+@Document(value = "proposta")
 class Proposta(
 
     @Id
@@ -20,7 +17,6 @@ class Proposta(
 
     val email: String,
 
-    @Embedded                         // incorporar para a mesma tabela o endereço
     val endereco: Endereco,
 
     val salario: BigDecimal

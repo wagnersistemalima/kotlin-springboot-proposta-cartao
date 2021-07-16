@@ -31,6 +31,11 @@ data class EnderecoRequest(
     // metodo para converter request em entidade
 
     fun toModel(): Endereco {
-        return Endereco(logradouro, bairro, complemento, uf.toUpperCase(), cep)
+        return Endereco(
+            logradouro = logradouro,
+            bairro = bairro,
+            complemento = complemento,
+            uf = uf.toUpperCase(),
+            cep = cep)
     }
 }

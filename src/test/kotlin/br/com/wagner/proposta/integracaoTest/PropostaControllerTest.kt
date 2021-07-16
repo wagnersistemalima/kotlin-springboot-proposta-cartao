@@ -8,9 +8,11 @@ import br.com.wagner.proposta.novaProposta.request.PropostaRequest
 import br.com.wagner.proposta.novaProposta.service.PropostaService
 import com.fasterxml.jackson.databind.ObjectMapper
 import org.junit.jupiter.api.AfterEach
+import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.boot.test.autoconfigure.data.mongo.AutoConfigureDataMongo
 import org.springframework.boot.test.autoconfigure.orm.jpa.AutoConfigureDataJpa
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc
 import org.springframework.boot.test.context.SpringBootTest
@@ -24,10 +26,9 @@ import java.math.BigDecimal
 import java.net.URI
 
 @SpringBootTest
-@AutoConfigureDataJpa
+@AutoConfigureDataMongo
 @AutoConfigureMockMvc
 @ActiveProfiles("test")
-@Transactional
 class PropostaControllerTest {
 
     @field:Autowired
@@ -82,8 +83,7 @@ class PropostaControllerTest {
         mockMvc.perform(MockMvcRequestBuilders.post(uri)
             .contentType(MediaType.APPLICATION_JSON).content(toJson(request)))
             .andExpect(MockMvcResultMatchers.status().`is`(201))
-
-        // assertivas
+        
     }
 
     // 2 cenario de test

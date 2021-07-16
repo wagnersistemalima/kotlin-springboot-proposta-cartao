@@ -1,11 +1,14 @@
 package br.com.wagner.proposta.novaProposta.model
 
-import javax.persistence.Embeddable
-import javax.validation.constraints.NotBlank
-import javax.validation.constraints.Size
+import org.springframework.data.annotation.Id
+import org.springframework.data.mongodb.core.mapping.Document
+import java.util.*
 
-@Embeddable        // classe sera incorporada pela entidade Proposta
+@Document(value = "endereco")
 class Endereco(
+
+    @Id
+    val id: String = UUID.randomUUID().toString(),
 
     val logradouro: String,
 

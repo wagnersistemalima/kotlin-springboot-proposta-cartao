@@ -1,10 +1,9 @@
 spring:
   profiles:
-    active: ${PROFILE:test}
+    active: ${PROFILE:dev}
   application:
     name: proposta
-  jpa:
-    open-in-view: false
+
 
 server:
   port: 8080
