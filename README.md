@@ -13,11 +13,10 @@ Api de um sistema para receber proposta de cartão de credito de clientes, esta 
 
 * Bean Validation: é uma especificação que permite validar objetos com facilidade em diferentes camadas da aplicação. A vantagem de usar Bean Validation é que as restrições ficam inseridas nas classes de modelo.
 
-* Banco de dados H2: banco de dados em memoria, para testes
+* MongoDB: Armazene dados em documentos flexíveis do tipo JSON, o que significa que os campos podem variar de documento para documento e a estrutura de dados pode ser alterada ao longo do tempo.
 
 * Ferramenta Postman: Para testar as requisições e criar um ambiente de produção
 
-* Spring Data JPA : biblioteca padrão de persistência de dados no java, baseado no mapeamento objeto relacional
 
 ## Porque Kotlin
 * Com o conhecimento da linguagem Kotlin, é possivel desenvolver aplicações mobile, backend e web
@@ -33,6 +32,11 @@ Api de um sistema para receber proposta de cartão de credito de clientes, esta 
 * Spring Boot transforma a maneira como se aborda as tarefas de programação, otimizando radicalmente sua experiência. Podemos combinar Spring Boot com um rico conjunto de bibliotecas de suporte
 * O conjunto flexivel e abrangente de extenções e bibliotecas de terceiros, permite que os desenvolvedores criem quase todos os aplicativos imagináveis
 * Com Spring, notamos inicialização rapida, desligamento rapido e execução otimizada por padrão
+
+## MongoDB
+* É um banco de dados opensource, de alta performance e flexível, sendo considerado o principal banco de dados NoSQL.
+Os banco de dados NoSQL apresentam algumas vantagens sobre os outros tipos, principalmente quando precisamos de escalabilidade, flexibilidade, bom desempenho e facilidade para consultas.
+* O MongoDB é orientado a documentos, ou seja, os dados são armazenados como documentos, ao contrário de bancos de dados de modelo relacional, onde trabalhamos com registros em linhas e colunas. Os documentos podem ser descritos como dados no formato de chave-valor, no caso, utilizando o formato JSON (JavaScript Object Notation).
 
 ## Criação de uma nova proposta
 * Objetivo:  Realizar a criação de uma proposta, durante o processo de criação da proposta deve ser checado restrições ao solicitante da proposta.
