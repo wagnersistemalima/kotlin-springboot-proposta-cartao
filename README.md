@@ -17,6 +17,8 @@ Api de um sistema para receber proposta de cartão de credito de clientes, esta 
 
 * Feign: Uma maneira elegante de criar clientes HTTP em Java
 
+* Spring Boot Actuator: Permitem monitorar e gerenciar seu aplicativo - como integridade, métricas, sessões, etc.
+
 * Ferramenta Postman: Para testar as requisições e criar um ambiente de produção
 
 
