@@ -9,4 +9,23 @@ server:
   port: 8080
 
 
+# -------------------Configuração actuator----------------
+management:
+  endpoint:
+    health:
+      show-details: always
 
+    web:
+      exposure:
+        include: "*"
+
+
+info:
+  app:
+    name: proposta
+    description: Api para receber propostas de cartao de credito para clientes
+    version: 2.3.12 Realese
+    java:
+      version: 11
+
+# --------------------------------------------------------------------------------------
