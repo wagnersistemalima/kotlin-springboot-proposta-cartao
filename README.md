@@ -70,3 +70,12 @@ Entretanto, não podemos permitir a existência de mais de uma proposta para o m
 * Objetivo: Devemos consultar alguns dados financeiros do solicitante afim de validar se sera possivel oferecer um cartão.
 
 * Necessidades: Antes de provisionar um cartão para o solicitante, devemos verificar se o mesmo possui restrições no sistema de dados finaneiros.
+
+## Melhorando a visibilidade da nossa aplicação para equipe de operação (Health Check)
+* Objetivo: Nossa aplicação deve "mostrar" a saúde dela para algum sistema automático de monitoramento ou equipe de operação!
+* Spring Boot - Actuator
+* Optar por gerenciar e monitorar seu aplicativo usando terminais HTTP ou com JMX. 
+* A auditoria, a integridade e a coleta de métricas também podem ser aplicadas automaticamente ao seu aplicativo.
+* Liberando end point: /actuator
+* Liberando end point: /health
+* Liberando end point: /info
