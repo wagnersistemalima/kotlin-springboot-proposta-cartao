@@ -81,3 +81,11 @@ Entretanto, não podemos permitir a existência de mais de uma proposta para o m
 * Liberando end point: /actuator
 * Liberando end point: /health
 * Liberando end point: /info
+
+## Associar o cartão criado com a proposta
+* Objetivo: Atrelar o número do cartão gerado a proposta. A proposta quando aprovada deve ser relacionada com um número do cartão.
+* Consultar api externa de cartoes
+
+* O sistema de proposta deve consultar em tempo periódico o sistema de cartões a fim de obter o número do cartão gerada para as propostas que foram geradas com sucesso, porém ainda não tem o número do cartão atrelado.
+
+* Necessidades: Associar o número do cartão na proposta previamente criada com sucesso. O cartão deve ser persistido de acordo com as informações recebidas do sistema externo.
