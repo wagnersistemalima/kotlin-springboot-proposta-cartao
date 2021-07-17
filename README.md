@@ -15,6 +15,8 @@ Api de um sistema para receber proposta de cartão de credito de clientes, esta 
 
 * MongoDB: Armazene dados em documentos flexíveis do tipo JSON, o que significa que os campos podem variar de documento para documento e a estrutura de dados pode ser alterada ao longo do tempo.
 
+* Feign: Uma maneira elegante de criar clientes HTTP em Java
+
 * Ferramenta Postman: Para testar as requisições e criar um ambiente de produção
 
 
@@ -64,7 +66,7 @@ Entretanto, não podemos permitir a existência de mais de uma proposta para o m
 * Devemos retornar o status code 422, quando o solicitante já requisitou uma proposta.
 * Permitir a criação de uma proposta, caso o solicitante não tenha nenhuma outra.
 
-## Consultando dados do solicitante
+## Consultando dados do solicitante: Api externa 
 * Objetivo: Devemos consultar alguns dados financeiros do solicitante afim de validar se sera possivel oferecer um cartão.
 
 * Necessidades: Antes de provisionar um cartão para o solicitante, devemos verificar se o mesmo possui restrições no sistema de dados finaneiros.
