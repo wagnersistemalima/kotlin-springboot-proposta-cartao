@@ -1,8 +1,11 @@
 package br.com.wagner.proposta.unitarioTest
 
+import br.com.wagner.proposta.feingClient.apiCartoes.ApiCartaoClient
+import br.com.wagner.proposta.feingClient.apiCartoes.EnviaDadosClienteRequest
 import br.com.wagner.proposta.feingClient.apiDadosFinanceiros.ApiDadosFinanceiroClient
 import br.com.wagner.proposta.feingClient.apiDadosFinanceiros.DadosClientRequest
 import br.com.wagner.proposta.handller.exceptions.ExceptionGenericValidated
+import br.com.wagner.proposta.novaProposta.cartao.repository.CartaoRepository
 import br.com.wagner.proposta.novaProposta.repository.PropostaRepository
 import br.com.wagner.proposta.novaProposta.request.EnderecoRequest
 import br.com.wagner.proposta.novaProposta.request.PropostaRequest
@@ -27,6 +30,12 @@ class PropostaServiceTest {
 
     @field:Mock
     lateinit var apiDadosFinanceiroClient: ApiDadosFinanceiroClient
+
+    @field:Mock
+    lateinit var apiCartaoClient: ApiCartaoClient
+
+    @field:Mock
+    lateinit var cartaoRepository: CartaoRepository
 
     // 1 cenario de teste/ caminho feliz
 
@@ -55,7 +64,13 @@ class PropostaServiceTest {
 
         val response = apiDadosFinanceiroClient.consulta(dadosClientRequest)
 
+        val enviaDadosClienteRequest = EnviaDadosClienteRequest(proposta)
+
+        val responseApiCartao = apiCartaoClient.solicitaCartao(enviaDadosClienteRequest)
+
         // ação
+
+        propostaService.execultaSolicitacaoCartao()
 
         // comportamento = deve retornar falso
         Mockito.`when`(propostaRepository.existsByDocumento(request.documento)).thenReturn(false)
@@ -65,6 +80,12 @@ class PropostaServiceTest {
 
         // comportamento deve retornar false
         Mockito.`when`(propostaRepository.existsByEmail(request.email)).thenReturn(false)
+
+        // comportamento:
+        Mockito.`when`(apiCartaoClient.solicitaCartao(enviaDadosClienteRequest)).thenReturn(responseApiCartao)
+
+        // comportamento
+
 
         Mockito.`when`(apiDadosFinanceiroClient.consulta(dadosClientRequest)).thenReturn(response)
         // assertiva

@@ -13,4 +13,6 @@ interface PropostaRepository: MongoRepository<Proposta, String> {
     fun existsByDocumento(documento: String): Boolean
 
     fun existsByEmail(email: String): Boolean
+
+    fun findByStatus(status: String): MutableList<Proposta>
 }

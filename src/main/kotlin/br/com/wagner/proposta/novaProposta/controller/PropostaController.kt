@@ -27,7 +27,13 @@ class PropostaController(@field:Autowired val propostaService: PropostaService) 
     fun insert(@RequestBody @Valid request: PropostaRequest): ResponseEntity<Any> {
         logger.info("-------------Iniciando o cadastro de uma proposta--------------")
 
+        // cadastrando proposta
+
         val response = propostaService.insert(request)
+
+        // solicitando cartao
+
+        propostaService.execultaSolicitacaoCartao()
 
         val uri = ServletUriComponentsBuilder.fromCurrentRequest()
             .path("/{id}").buildAndExpand(response.idProposta).toUri()

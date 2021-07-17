@@ -1,5 +1,6 @@
 package br.com.wagner.proposta.novaProposta.model
 
+import br.com.wagner.proposta.novaProposta.cartao.model.Cartao
 import org.springframework.data.annotation.Id
 import org.springframework.data.mongodb.core.mapping.Document
 import java.math.BigDecimal
@@ -22,6 +23,13 @@ class Proposta(
     val salario: BigDecimal
 ){
     var status: String? = null
+    var cartao: Cartao? = null
+
+    // metodo para adicionar um cartao a proposta
+
+    fun adicionaCartao(cartao: Cartao) {
+        this.cartao = cartao
+    }
 }
 
 
