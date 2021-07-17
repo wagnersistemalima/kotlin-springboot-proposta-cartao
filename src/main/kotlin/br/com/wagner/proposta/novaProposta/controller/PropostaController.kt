@@ -33,7 +33,6 @@ class PropostaController(@field:Autowired val propostaService: PropostaService) 
 
         // solicitando cartao
 
-        propostaService.execultaSolicitacaoCartao()
 
         val uri = ServletUriComponentsBuilder.fromCurrentRequest()
             .path("/{id}").buildAndExpand(response.idProposta).toUri()

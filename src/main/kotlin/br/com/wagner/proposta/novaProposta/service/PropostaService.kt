@@ -93,13 +93,20 @@ class PropostaService(
             val listaDeClientesElegiveis = propostaRepository.findByStatus(status)
 
             for(proposta in listaDeClientesElegiveis) {
-                val enviaDadosClienteRequest = EnviaDadosClienteRequest(proposta)
-                val response = apiCartaoClient.solicitaCartao(enviaDadosClienteRequest).body
 
-                val cartao = response!!.toModel(proposta)
-                cartaoRepository.save(cartao)
-                proposta.adicionaCartao(cartao)
-                propostaRepository.save(proposta)
+                // validacao
+                if(proposta.cartao == null) {
+                    logger.info("---Enviando propostas ELEGIVEIS que não estao associadas a um cartao------")
+                    val enviaDadosClienteRequest = EnviaDadosClienteRequest(proposta)
+                    val response = apiCartaoClient.solicitaCartao(enviaDadosClienteRequest).body
+
+                    val cartao = response!!.toModel(proposta)
+                    cartaoRepository.save(cartao)
+                    proposta.adicionaCartao(cartao)
+                    propostaRepository.save(proposta)
+                    logger.info("--Proposta associada a um cartao salva com sucesso---")
+                }
+
             }
 
         }
