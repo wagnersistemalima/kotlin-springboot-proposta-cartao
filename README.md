@@ -92,3 +92,5 @@ Entretanto, não podemos permitir a existência de mais de uma proposta para o m
 * Esta anotação  @Scheduled é utilizada para configurar e agendar tarefas no Spring
 
 * Necessidades: Associar o número do cartão na proposta previamente criada com sucesso. O cartão deve ser persistido de acordo com as informações recebidas do sistema externo.
+
+![alter text](https://github.com/wagnersistemalima/kotlin-springboot-proposta-cartao/blob/main/images/mongo.png)
