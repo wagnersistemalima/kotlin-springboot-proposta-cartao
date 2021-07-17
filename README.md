@@ -88,4 +88,6 @@ Entretanto, não podemos permitir a existência de mais de uma proposta para o m
 
 * O sistema de proposta deve consultar em tempo periódico o sistema de cartões a fim de obter o número do cartão gerada para as propostas que foram geradas com sucesso, porém ainda não tem o número do cartão atrelado.
 
+* Criei um metodo anotado com @Scheduled(fixedDelay = 20000) que verifica a cada 20 segundos as propostas criadas com status ELEGIVEL, adiciona em uma lista e envia para api de cartoes, solicitando o cartao de credito para caca proposta aprovada
+
 * Necessidades: Associar o número do cartão na proposta previamente criada com sucesso. O cartão deve ser persistido de acordo com as informações recebidas do sistema externo.
