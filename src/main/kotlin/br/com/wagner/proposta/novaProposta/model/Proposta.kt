@@ -20,10 +20,11 @@ class Proposta(
 
     val endereco: Endereco,
 
-    val salario: BigDecimal
-){
-    var status: String? = null
+    val salario: BigDecimal,
+
+    var status: String? = null,
     var cartao: Cartao? = null
+){
 
     // metodo para adicionar um cartao a proposta
 

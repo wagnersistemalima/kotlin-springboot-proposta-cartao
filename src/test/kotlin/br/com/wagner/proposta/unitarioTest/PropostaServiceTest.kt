@@ -34,8 +34,6 @@ class PropostaServiceTest {
     @field:Mock
     lateinit var apiCartaoClient: ApiCartaoClient
 
-    @field:Mock
-    lateinit var cartaoRepository: CartaoRepository
 
     // 1 cenario de teste/ caminho feliz
 
@@ -70,7 +68,6 @@ class PropostaServiceTest {
 
         // ação
 
-        propostaService.execultaSolicitacaoCartao()
 
         // comportamento = deve retornar falso
         Mockito.`when`(propostaRepository.existsByDocumento(request.documento)).thenReturn(false)
@@ -80,16 +77,6 @@ class PropostaServiceTest {
 
         // comportamento deve retornar false
         Mockito.`when`(propostaRepository.existsByEmail(request.email)).thenReturn(false)
-
-        // comportamento:
-        Mockito.`when`(apiCartaoClient.solicitaCartao(enviaDadosClienteRequest)).thenReturn(responseApiCartao)
-
-        // comportamento
-
-
-        Mockito.`when`(apiDadosFinanceiroClient.consulta(dadosClientRequest)).thenReturn(response)
-        // assertiva
-
 
         Assertions.assertEquals(response, apiDadosFinanceiroClient.consulta(dadosClientRequest))
 

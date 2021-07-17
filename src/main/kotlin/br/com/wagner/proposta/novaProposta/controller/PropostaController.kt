@@ -17,7 +17,10 @@ import javax.validation.Valid
 @Validated
 @RestController
 @RequestMapping("/propostas")
-class PropostaController(@field:Autowired val propostaService: PropostaService) {
+class PropostaController(
+    @field:Autowired val propostaService: PropostaService,
+
+    ) {
 
     val logger = LoggerFactory.getLogger(PropostaController::class.java)
 
