@@ -63,3 +63,8 @@ Entretanto, não podemos permitir a existência de mais de uma proposta para o m
 
 * Devemos retornar o status code 422, quando o solicitante já requisitou uma proposta.
 * Permitir a criação de uma proposta, caso o solicitante não tenha nenhuma outra.
+
+## Consultando dados do solicitante
+* Objetivo: Devemos consultar alguns dados financeiros do solicitante afim de validar se sera possivel oferecer um cartão.
+
+* Necessidades: Antes de provisionar um cartão para o solicitante, devemos verificar se o mesmo possui restrições no sistema de dados finaneiros.
