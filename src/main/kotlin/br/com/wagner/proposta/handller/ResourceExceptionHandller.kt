@@ -1,6 +1,7 @@
 package br.com.wagner.proposta.handller
 
 import br.com.wagner.proposta.handller.exceptions.ExceptionGenericValidated
+import br.com.wagner.proposta.handller.exceptions.ResourceNotFoundException
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.validation.FieldError
@@ -33,6 +34,16 @@ class ResourceExceptionHandller {
     fun campoUnico(e: ExceptionGenericValidated, request: HttpServletRequest): ResponseEntity<Any> {
         val status = HttpStatus.UNPROCESSABLE_ENTITY
         val error = ValidationError(Instant.now(), status.value(), "Validation", message = e.message!!, path = request.requestURI)
+
+        return  ResponseEntity.status(status).body(error)
+    }
+
+    // metodo para captar exceçoes de recurso não encontrado
+
+    @ExceptionHandler(ResourceNotFoundException::class)
+    fun notFound(e: ResourceNotFoundException, request: HttpServletRequest): ResponseEntity<Any> {
+        val status = HttpStatus.NOT_FOUND
+        val error = ValidationError(Instant.now(), status.value(), "Entity not found", message = e.message!!, path = request.requestURI)
 
         return  ResponseEntity.status(status).body(error)
     }
