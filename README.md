@@ -21,6 +21,12 @@ Api de um sistema para receber proposta de cartão de credito de clientes, esta 
 
 * Ferramenta Postman: Para testar as requisições e criar um ambiente de produção
 
+## Testes automatizados com JUnit 5
+* O JUnit foi repensado como uma plataforma para construção e execução de testes, de modo que o JUnit 5 é composto por diversos módulos com papéis diferentes (ao invés de “um único framework”)
+* JUnit Jupiter: Este módulo contém os novos recursos para construção de testes usando o JUnit, e fornece uma implementação de TestEngine para execução dos testes escritos com o JUnit Jupiter.
+* Testes unitarios ( @Mock , @InjectMock, @ExtendWith(SpringExtension::class))
+* Testes de integraçao com um banco de testes (@SpringBootTest, @AutoConfigureDataMongo, @AutoConfigureMockMvc, @ActiveProfile("teste"))
+
 
 ## Porque Kotlin
 * Com o conhecimento da linguagem Kotlin, é possivel desenvolver aplicações mobile, backend e web
