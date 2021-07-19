@@ -100,3 +100,9 @@ Entretanto, não podemos permitir a existência de mais de uma proposta para o m
 * Necessidades: Associar o número do cartão na proposta previamente criada com sucesso. O cartão deve ser persistido de acordo com as informações recebidas do sistema externo.
 
 ![alter text](https://github.com/wagnersistemalima/kotlin-springboot-proposta-cartao/blob/main/images/mongo2.png)
+
+## Acompanhamento da Proposta
+* Objetivo: Criação de um endpoint que informe os dados da proposta
+* O solicitante pode consultar o estado da sua proposta.
+* Retornar status code 200 com a proposta no corpo da resposta.
+* Retornar status code 404 quando a proposta não existir.
