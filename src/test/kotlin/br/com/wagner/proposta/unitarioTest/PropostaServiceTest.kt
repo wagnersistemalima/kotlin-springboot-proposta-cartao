@@ -5,7 +5,6 @@ import br.com.wagner.proposta.feingClient.apiCartoes.EnviaDadosClienteRequest
 import br.com.wagner.proposta.feingClient.apiDadosFinanceiros.ApiDadosFinanceiroClient
 import br.com.wagner.proposta.feingClient.apiDadosFinanceiros.DadosClientRequest
 import br.com.wagner.proposta.handller.exceptions.ExceptionGenericValidated
-import br.com.wagner.proposta.novaProposta.cartao.repository.CartaoRepository
 import br.com.wagner.proposta.novaProposta.repository.PropostaRepository
 import br.com.wagner.proposta.novaProposta.request.EnderecoRequest
 import br.com.wagner.proposta.novaProposta.request.PropostaRequest

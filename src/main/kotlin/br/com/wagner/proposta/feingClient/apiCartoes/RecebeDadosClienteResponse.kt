@@ -8,9 +8,25 @@ import java.time.LocalDateTime
 data class RecebeDadosClienteResponse(
 
     val id: String,
+
     val emitidoEm: LocalDateTime,
+
     val titular: String,
+
+    val bloqueios: MutableList<Any?>,
+
+    val avisos: MutableList<Any?>,
+
+    val carteiras: MutableList<Any?>,
+
+    val parcelas: MutableList<Any?>,
+
     val limite: Int,
+
+    var renegociacao: RenegociacaoResponse?,
+
+    val vencimento: VencimentoResponse?,
+
     val idProposta: String
 ) {
 
@@ -21,6 +37,6 @@ data class RecebeDadosClienteResponse(
         if(!proposta.id.equals(idProposta)) {
             throw ExceptionGenericValidated("Erro validação id proposta")
         }
-        return Cartao(id, emitidoEm, titular, limite, idProposta)
+        return Cartao(id, emitidoEm, titular, bloqueios, avisos, carteiras, parcelas, limite,renegociacao,vencimento, idProposta)
     }
 }
