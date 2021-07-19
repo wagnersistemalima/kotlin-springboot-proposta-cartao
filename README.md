@@ -93,4 +93,4 @@ Entretanto, não podemos permitir a existência de mais de uma proposta para o m
 
 * Necessidades: Associar o número do cartão na proposta previamente criada com sucesso. O cartão deve ser persistido de acordo com as informações recebidas do sistema externo.
 
-![alter text](https://github.com/wagnersistemalima/kotlin-springboot-proposta-cartao/blob/main/images/mongo.png)
+![alter text](https://github.com/wagnersistemalima/kotlin-springboot-proposta-cartao/blob/main/images/mongo2.png)
