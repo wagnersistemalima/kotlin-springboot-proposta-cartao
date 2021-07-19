@@ -21,6 +21,12 @@ Api de um sistema para receber proposta de cartão de credito de clientes, esta 
 
 * Ferramenta Postman: Para testar as requisições e criar um ambiente de produção
 
+## Testes automatizados com JUnit 5
+* O JUnit foi repensado como uma plataforma para construção e execução de testes, de modo que o JUnit 5 é composto por diversos módulos com papéis diferentes (ao invés de “um único framework”)
+* JUnit Jupiter: Este módulo contém os novos recursos para construção de testes usando o JUnit, e fornece uma implementação de TestEngine para execução dos testes escritos com o JUnit Jupiter.
+* Testes unitarios ( @Mock , @InjectMock, @ExtendWith(SpringExtension::class))
+* Testes de integraçao com um banco de testes (@SpringBootTest, @AutoConfigureDataMongo, @AutoConfigureMockMvc, @ActiveProfile("teste"))
+
 
 ## Porque Kotlin
 * Com o conhecimento da linguagem Kotlin, é possivel desenvolver aplicações mobile, backend e web
@@ -93,4 +99,10 @@ Entretanto, não podemos permitir a existência de mais de uma proposta para o m
 
 * Necessidades: Associar o número do cartão na proposta previamente criada com sucesso. O cartão deve ser persistido de acordo com as informações recebidas do sistema externo.
 
-![alter text](https://github.com/wagnersistemalima/kotlin-springboot-proposta-cartao/blob/main/images/mongo.png)
+![alter text](https://github.com/wagnersistemalima/kotlin-springboot-proposta-cartao/blob/main/images/mongo2.png)
+
+## Acompanhamento da Proposta
+* Objetivo: Criação de um endpoint que informe os dados da proposta
+* O solicitante pode consultar o estado da sua proposta.
+* Retornar status code 200 com a proposta no corpo da resposta.
+* Retornar status code 404 quando a proposta não existir.
