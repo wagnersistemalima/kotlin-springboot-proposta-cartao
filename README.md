@@ -116,3 +116,7 @@ Entretanto, não podemos permitir a existência de mais de uma proposta para o m
 * Retornar 201 com Header Location preenchido com a URL da nova biometria em caso de sucesso.
 * Retornar 400 quando a biometria não enviada ou está inválida.
 * Retornar 404 quando o cartão não for encontrado.
+
+## Resultado
+
+![alter text](https://github.com/wagnersistemalima/kotlin-springboot-proposta-cartao/blob/main/images/biometria.png)
