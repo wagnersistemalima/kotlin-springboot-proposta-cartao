@@ -1,5 +1,5 @@
 # kotlin-springboot-proposta-cartao
-Api de um sistema para receber proposta de cartão de credito de clientes, esta api interage com outros sistemas para autorização e liberação de cartão.
+microsserviço para receber proposta de cartão de credito de clientes, esta api interage com outros sistemas para autorização e liberação de cartão.
 
 ## Setup do Projeto 
 * Linguagem de programação: Kotlin
