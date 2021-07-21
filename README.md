@@ -106,3 +106,13 @@ Entretanto, não podemos permitir a existência de mais de uma proposta para o m
 * O solicitante pode consultar o estado da sua proposta.
 * Retornar status code 200 com a proposta no corpo da resposta.
 * Retornar status code 404 quando a proposta não existir.
+
+## Criar biometria
+* Objetivo: O portador do cartão deseja realizar o cadastro da biometria para conseguir acesso ao aplicativo usando a mesma. O cartão pode ter uma ou mais biometrias associadas.
+* Realizar o cadastro da biometria. Devemos armazenar a data em que a biometria foi associada para futuras auditorias.
+* Identificador do cartão é obrigatório na URL (path parameter).
+* Biometria deve ser enviada em Base64.
+* A biometria deve estar armazenada no sistema, com um identificador gerado pelo sistema.
+* Retornar 201 com Header Location preenchido com a URL da nova biometria em caso de sucesso.
+* Retornar 400 quando a biometria não enviada ou está inválida.
+* Retornar 404 quando o cartão não for encontrado.
