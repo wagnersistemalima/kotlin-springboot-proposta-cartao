@@ -2,10 +2,11 @@ package br.com.wagner.proposta.novaProposta.cartao.model
 
 import br.com.wagner.proposta.feingClient.apiCartoes.RenegociacaoResponse
 import br.com.wagner.proposta.feingClient.apiCartoes.VencimentoResponse
+import br.com.wagner.proposta.novaProposta.biometria.model.Biometria
+import br.com.wagner.proposta.novaProposta.model.Proposta
 import java.time.LocalDateTime
 
 class Cartao(
-
 
     val id: String,
     val emitidoEm: LocalDateTime,
@@ -26,4 +27,12 @@ class Cartao(
     val vencimento: VencimentoResponse?,
 
     val idProposta: String
-)
+){
+    var biometrias = mutableListOf<Biometria?>()
+
+    // metodo para adicionar biometria a lista de biometrias
+
+    fun adicionaBiometria(biometria: Biometria) {
+        biometrias.add(biometria)
+    }
+}
